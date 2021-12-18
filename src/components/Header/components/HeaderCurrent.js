@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-//!!
 const HeaderCurrent = () => {
     const title = useSelector(state => state.routingReducer.title);
 

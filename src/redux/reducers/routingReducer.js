@@ -9,13 +9,6 @@ const initialState = {
 
 const routingReducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'ADD_NODE': {
-            return {
-                route: state.route + '/' + action.payload,
-                nodes: [...state.nodes, action.payload],
-                title: action.payload
-            }
-        }
         case 'TITLE_NODE':
             return {
                 route: '/main',
@@ -25,7 +18,6 @@ const routingReducer = (state = initialState, action) => {
         case 'UPDATE_VIEW':
             const newNodes = action.payload.split('/');
             return {
-                ...state,
                 route: action.payload,
                 nodes: [...newNodes],
                 title: newNodes[newNodes.length - 1]

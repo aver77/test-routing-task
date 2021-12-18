@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useRef, useEffect } from 'react';
 import MainSubmitBtn from './MainSubmitBtn';
 
@@ -6,30 +5,24 @@ import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router';
 import { useNavigate } from 'react-router';
 
-import { addNode, updateView } from '../../../redux/actions/routingActions';
+import { updateView } from '../../../redux/actions/routingActions';
 import { useSelector } from 'react-redux'; 
 
 const MainInput = () => {
-    console.log('render');
-    const dispatch = useDispatch();
     const inputRef = useRef(null);
 
+    const dispatch = useDispatch();
     const currentRoute = useSelector(state => state.routingReducer.route);
 
     let location = useLocation();
-    const locationHandler = (addedLocation) => location += `${addedLocation}`;
-
     const navigation = useNavigate();
-
+    
     useEffect(() => {
-        // console.log('current location:', location.pathname);
         dispatch(updateView(location.pathname));
-    }, [location.pathname])
-
+    }, [dispatch, location.pathname]);
+    
     const inputValueHandler = (value) => {
-        dispatch(addNode(value));
         navigation(`${currentRoute}/${value}`);
-        console.log('current location:', location.pathname);
     }
 
     const keyDownHandler = (e) => {
@@ -38,7 +31,6 @@ const MainInput = () => {
             inputRef.current.value = ''
         }
     }
-
     const submitHandler = () => {
         if (inputRef.current.value) {
             inputValueHandler(inputRef.current.value);

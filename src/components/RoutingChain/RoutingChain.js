@@ -1,6 +1,6 @@
 import React from 'react';
 // eslint-disable-next-line
-import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'; //v6
 
 import HeaderItem from '../Header/HeaderItem';
 import MainItem from '../Main/MainItem';

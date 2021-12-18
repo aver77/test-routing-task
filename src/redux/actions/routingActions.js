@@ -1,10 +1,3 @@
-const addNode = (currentUrl) => {
-    return {
-        type: 'ADD_NODE',
-        payload: currentUrl
-    }
-}
-
 const titleNode = () => {
     return {
         type: 'TITLE_NODE'
@@ -19,7 +12,6 @@ const updateView = (currentNodes) => {
 }
 
 export {
-    addNode,
     titleNode,
     updateView
 }
