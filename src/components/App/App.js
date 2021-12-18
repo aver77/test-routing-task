@@ -1,10 +1,9 @@
 import React from 'react';
+import RoutingChain from '../RoutingChain/RoutingChain';
 
 const App = () => {
     return (
-        <div>
-            
-        </div>
+        <RoutingChain />
     );
 };
 

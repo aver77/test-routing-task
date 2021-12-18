@@ -1,0 +1,52 @@
+%flex {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+%size {
+    font-size: 22px;
+}
+
+.blue-bg {
+    background-color: #1A6ED8;
+}
+.green-bg {
+    background-color: #128C7E;
+}
+
+// HeaderItem
+.header {
+    position: fixed;
+    top: 0;
+    height: 128px;
+    width: 100%;
+    font-family: 'Montserrat';
+    box-shadow: 0 6px 6px 0px rgba(0, 0, 0, 0.16);
+    &__item {
+        margin: 10px;
+    }
+    &__wrapper {
+        height: 100%;
+        @extend %flex;
+    }
+
+    // HeaderName
+    &__text-name {
+        @extend %size;
+    }
+
+    //HeaderTitle
+    &__text-title {
+        cursor: pointer;
+        text-decoration: underline;
+        @extend %size;
+        @media screen and (max-width: 374px) {
+            font-size: 16px;
+        }
+    }
+    //HeaderCurrent
+    &__text-current {
+        @extend %size;
+    }
+}

@@ -1,0 +1,44 @@
+$dH: 34px;
+%flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+// MainItem
+.main {
+    margin-top: 152px;
+    &__wrapper {
+        @extend %flex;
+    }
+
+    // MainForm
+    &__form {
+        text-align: center;
+        width: 100%;
+    }
+
+    // MainInput
+    &__label {
+        width: 100%;
+    }
+    &__input {
+        width: 50%;
+        height: $dH;
+        &[type="text"] {
+            font-family: 'Montserrat';
+            padding-left: 12px;
+        }
+    }
+    &__text-label {
+        font-size: 26px;
+        margin-bottom: 24px;
+    }
+
+    // MainSubmitBtn
+    &__btn-submit {
+        height: $dH;
+        margin-top: 2px;
+    }
+}
