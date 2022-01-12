@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import MainInput from './MainInput';
 
 const MainForm = () => {
@@ -9,4 +9,4 @@ const MainForm = () => {
     );
 };
 
-export default MainForm;
+export default memo(MainForm);

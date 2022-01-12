@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useCallback, memo } from 'react';
 import MainSubmitBtn from './MainSubmitBtn';
 
 import { useDispatch } from 'react-redux';
@@ -21,9 +21,9 @@ const MainInput = () => {
         dispatch(updateView(location.pathname));
     }, [dispatch, location.pathname]);
     
-    const inputValueHandler = (value) => {
+    const inputValueHandler = useCallback((value) => {
         navigation(`${currentRoute}/${value}`);
-    }
+    },[currentRoute, navigation])
 
     const keyDownHandler = (e) => {
         if (e.key === "Enter" && inputRef.current.value) {
@@ -31,12 +31,12 @@ const MainInput = () => {
             inputRef.current.value = ''
         }
     }
-    const submitHandler = () => {
+    const submitHandler = useCallback(() => {
         if (inputRef.current.value) {
             inputValueHandler(inputRef.current.value);
             inputRef.current.value = ''
         }
-    }
+    },[inputValueHandler, inputRef])
 
     return (
         <label className='main__label'>
@@ -53,4 +53,4 @@ const MainInput = () => {
     );
 };
 
-export default React.memo(MainInput);
+export default memo(MainInput);

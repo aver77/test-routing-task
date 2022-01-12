@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 const HeaderName = ({namePicker}) => {
     return (
@@ -15,4 +15,4 @@ const HeaderName = ({namePicker}) => {
     );
 };
 
-export default React.memo(HeaderName);
+export default memo(HeaderName);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import HeaderTitle from './components/HeaderTitle';
 import HeaderName from './components/HeaderName';
 
@@ -9,7 +9,7 @@ import HeaderCurrent from './components/HeaderCurrent';
 
 const HeaderItem = () => {
     const route = useSelector(state => state.routingReducer.route);
-    let headerClass = 'header';
+    let headerClass = useMemo(() => 'header', []);
 
     return (
         <div className={route === '/main'?headerClass + ' blue-bg' : headerClass + ' green-bg'}>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useSelector } from 'react-redux';
 
 const HeaderCurrent = () => {
@@ -11,4 +11,4 @@ const HeaderCurrent = () => {
     );
 };
 
-export default HeaderCurrent;
+export default memo(HeaderCurrent);

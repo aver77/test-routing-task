@@ -10,7 +10,7 @@ const MainSubmitBtn = ({submitHandler}) => {
             className='main__btn-submit' 
             type="submit" 
             value="Отправить"
-            onClick={() => clickHandler()} 
+            onClick={clickHandler} 
         />
     );
 };
